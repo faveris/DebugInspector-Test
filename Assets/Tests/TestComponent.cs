@@ -35,6 +35,7 @@ public class TestComponent : MonoBehaviour
 
     private TestClass m_instanceField = new TestClass();
     private IList<TestClass> m_listField = new List<TestClass>() { new TestClass() };
+    private ITestInterface m_interfaceField = new TestClass();
 
     //
     // Service definitions
@@ -46,7 +47,11 @@ public class TestComponent : MonoBehaviour
         Value2
     }
 
-    private class TestClass
+    private interface ITestInterface
+    {
+    }
+
+    private class TestClass : ITestInterface
     {
         private int m_someField = 500;
     }
