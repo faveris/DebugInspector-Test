@@ -11,6 +11,7 @@ public class TestComponent : MonoBehaviour
     //
 
     public int publicField = 0;
+    public static int publicStaticField = 5;
 
     private byte m_byteField = 200;
     private short m_shortField = 2;
@@ -54,7 +55,14 @@ public class TestComponent : MonoBehaviour
 
     private class TestClass : ITestInterface
     {
+        private static TestClass s_instance = null;
+
         private int m_someField = 500;
+
+        public TestClass()
+        {
+            s_instance = this;
+        }
     }
 
     private class TestChildClass : TestClass
