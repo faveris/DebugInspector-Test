@@ -38,6 +38,7 @@ public class TestComponent : MonoBehaviour
     private IList<TestClass> m_listField = new List<TestClass>() { new TestClass() };
     private ITestInterface m_interfaceField = new TestClass();
     private TestClass m_childField = new TestChildClass();
+    private TestStruct m_structField;
 
     //
     // Service definitions
@@ -68,6 +69,12 @@ public class TestComponent : MonoBehaviour
     private class TestChildClass : TestClass
     {
         private float m_childField = 50.0f;
+    }
+
+    private struct TestStruct
+    {
+        int x;
+        int y;
     }
 }
 
